@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f58eb366103d5f94097dddd6ec1cfaf2, type: 3}
+  m_Name: BasicEnemy
+  m_EditorClassIdentifier: 
+  enemyName: Tri
+  startingHealth: 15
+  sprite: {fileID: 21300000, guid: 77efa6ae3fd63d540b0186389e7fbf90, type: 3}
+  scale: 1.5
+  defaultColour: {r: 1, g: 1, b: 1, a: 1}
+  hurtParticle: {fileID: 7053142434067463283, guid: c6165bd65a05ee240a91da5faeb2106a, type: 3}

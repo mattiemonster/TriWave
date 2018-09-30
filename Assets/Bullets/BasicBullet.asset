@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95270918422999149ac901a9cdd3fbd8, type: 3}
+  m_Name: BasicBullet
+  m_EditorClassIdentifier: 
+  speed: 0.1
+  damage: 5
+  sprite: {fileID: 21300000, guid: c31bff443ae152848a6985ef50a9474b, type: 3}
+  defaultColour: {r: 1, g: 1, b: 1, a: 1}
+  brokenParticle: {fileID: 4098218816971042774, guid: 0d11eddcdb461b848951580670dd2d95, type: 3}
