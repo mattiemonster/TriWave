@@ -6,6 +6,7 @@ using DG.Tweening;
 public class EnemyObject : MonoBehaviour
 {
     public Enemy enemyType;
+    public GameManager gm;
 
     private int health;
     private SpriteRenderer sr;
@@ -14,6 +15,12 @@ public class EnemyObject : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+    }
+
+    public void Load(Enemy enemy)
+    {
+        enemyType = enemy;
+
         health = enemyType.startingHealth;
 
         sr = gameObject.AddComponent<SpriteRenderer>();
@@ -22,7 +29,7 @@ public class EnemyObject : MonoBehaviour
         // Fade in
         sr.color = new Color(enemyType.defaultColour.r, enemyType.defaultColour.g, enemyType.defaultColour.b,
                              0f);
-        sr.DOColor(enemyType.defaultColour, 1f);
+        sr.DOColor(enemyType.defaultColour, 0.25f);
 
         gameObject.AddComponent<PolygonCollider2D>();
 
@@ -60,6 +67,7 @@ public class EnemyObject : MonoBehaviour
     {
         Debug.Log("Enemy '" + gameObject.name + "' died.");
         Destroy(gameObject);
+        gm.EnemyKilled();
     }
 
     // Update is called once per frame
