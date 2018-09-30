@@ -1256,9 +1256,12 @@ MonoBehaviour:
   wave: 1
   kills: 0
   killsText: {fileID: 1212589977}
+  requiredKillsText: {fileID: 570964303}
   spawnTime: 180
   currentSpawnTime: 0
-  enemyType: {fileID: 11400000, guid: ee7b8557a93ee134daccb5a4457608be, type: 2}
+  livingEnemies: 0
+  requiredKills: 0
+  startingWave: {fileID: 11400000, guid: a30a620fd474d3946ab2fcede1398866, type: 2}
 --- !u!1001 &8688991814855482566
 PrefabInstance:
   m_ObjectHideFlags: 0

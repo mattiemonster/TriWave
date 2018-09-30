@@ -50,6 +50,7 @@ public class EnemyObject : MonoBehaviour
         health -= amount;
 
         // Add red colour effect
+        sr.DOComplete();
         sr.color = Color.red;
         sr.DOColor(enemyType.defaultColour, 0.45f);
 

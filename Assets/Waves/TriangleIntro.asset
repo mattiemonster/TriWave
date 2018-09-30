@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3bd5db45260c6bc468eb2ce2f0080315, type: 3}
+  m_Name: TriangleIntro
+  m_EditorClassIdentifier: 
+  waveName: They're Evolving!
+  waveDesc: This might be harder.
+  maxAliveEnemies: 10
+  killsRequired: 15
+  spawnTime: 2
+  enemies:
+  - {fileID: 11400000, guid: ee7b8557a93ee134daccb5a4457608be, type: 2}
+  - {fileID: 11400000, guid: 3551d5ed6c8a61f41adfc4e885e72abf, type: 2}
