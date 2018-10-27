@@ -56,7 +56,7 @@ public class EnemyObject : MonoBehaviour
 
         if (health <= 0)
         {
-            Die();
+            Die(true);
         } else
         {
             // Summon and destroy hurt particle
@@ -64,11 +64,12 @@ public class EnemyObject : MonoBehaviour
         }
     }
 
-    public void Die()
+    public void Die(bool destroy)
     {
+        health = 0;
         Debug.Log("Enemy '" + gameObject.name + "' died.");
         Destroy(gameObject);
-        gm.EnemyKilled();
+        gm.EnemyKilled(gameObject);
     }
 
     // Update is called once per frame
