@@ -27,9 +27,11 @@ public class EnemyObject : MonoBehaviour
         sr.sprite = enemyType.sprite;
 
         // Fade in
-        sr.color = new Color(enemyType.defaultColour.r, enemyType.defaultColour.g, enemyType.defaultColour.b,
-                             0f);
-        sr.DOColor(enemyType.defaultColour, 0.25f);
+		// Removed for now cause sometimes the animation doesn't play and the enemy remains invisible
+        // sr.color = new Color(enemyType.defaultColour.r, enemyType.defaultColour.g, enemyType.defaultColour.b,
+        //                      1f);
+		sr.color = enemyType.defaultColour;
+        // .DOColor(enemyType.defaultColour, 0.25f);
 
         gameObject.AddComponent<PolygonCollider2D>();
 
