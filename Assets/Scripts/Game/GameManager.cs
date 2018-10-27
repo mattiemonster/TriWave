@@ -2,6 +2,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.Animations;
 using DG.Tweening;
 
 public class GameManager : MonoBehaviour
@@ -29,6 +30,11 @@ public class GameManager : MonoBehaviour
 
     public List<GameObject> aliveEnemies;
     public List<Wave> availableWaves;
+
+    // UI Objects
+    public GameObject darkeningBG;
+    public GameObject nextWaveUI;
+    public GameObject waveCompleteText;
 
     // Start is called before the first frame update
     void Start()
@@ -71,6 +77,23 @@ public class GameManager : MonoBehaviour
             currentSpawnTime--;
         }
     }
+
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.PageUp))
+        {
+            kills++;
+            killsText.text = kills.ToString();
+            if (kills == requiredKills)
+            {
+                Reset();
+                darkeningBG.SetActive(true);
+                nextWaveUI.SetActive(true);
+                waveCompleteText.GetComponent<Animator>().Play("Entry");
+            }
+            killProgressSlider.value += killSliderIncrement;
+        }
+    }
     
     public void EnemyKilled(GameObject enemy)
     {
@@ -79,7 +102,10 @@ public class GameManager : MonoBehaviour
 
         if (kills == requiredKills)
         {
-            NextWave();
+            Reset();
+            darkeningBG.SetActive(true);
+            nextWaveUI.SetActive(true);
+            waveCompleteText.GetComponent<Animation>().Play();
         }
 
         aliveEnemies.Remove(enemy);
@@ -87,14 +113,8 @@ public class GameManager : MonoBehaviour
         killProgressSlider.value += killSliderIncrement;
     }
 
-    /// <summary>
-    /// Go to the next wave
-    /// </summary>
-    public void NextWave()
+    public void Reset()
     {
-        wave++;
-        wavesText.text = "WAVE " + wave;
-        
         foreach (GameObject enemy in aliveEnemies)
         {
             // Kill all enemies
@@ -109,6 +129,18 @@ public class GameManager : MonoBehaviour
         }
 
         aliveEnemies.Clear();
+    }
+
+    /// <summary>
+    /// Go to the next wave
+    /// </summary>
+    public void NextWave(bool reset = false)
+    {
+        wave++;
+        wavesText.text = "WAVE " + wave;
+
+        if (reset)
+            Reset();
 
         int newWaveIndex = rnd.Next(0, availableWaves.Count);
         ChangeWave(availableWaves[newWaveIndex]);
