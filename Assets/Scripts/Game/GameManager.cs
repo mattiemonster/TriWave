@@ -35,6 +35,7 @@ public class GameManager : MonoBehaviour
     public GameObject darkeningBG;
     public GameObject nextWaveUI;
     public GameObject waveCompleteText;
+    public List<Animator> animators;
 
     // Start is called before the first frame update
     void Start()
@@ -105,7 +106,8 @@ public class GameManager : MonoBehaviour
             Reset();
             darkeningBG.SetActive(true);
             nextWaveUI.SetActive(true);
-            waveCompleteText.GetComponent<Animation>().Play();
+            foreach (Animator anim in animators)
+                anim.Play("Entry");
         }
 
         aliveEnemies.Remove(enemy);
