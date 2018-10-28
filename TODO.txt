@@ -1,0 +1,9 @@
+(Not in any specific order)
+
+- Fix disappearing bug
+- Enemy AI
+- Proper enemy spawning
+- Functioning wave system
+- Currency
+- Shop
+- Saving
