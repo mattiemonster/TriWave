@@ -7,3 +7,8 @@
 - Currency
 - Shop
 - Saving
+- Get cursor working
+	- Different cursor when selecting button?
+- Fix lag when finishing wave
+- Stop or slow down player movement when in UI
+- Stop mob spawning when in UI
