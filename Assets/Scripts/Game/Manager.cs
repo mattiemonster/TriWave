@@ -12,6 +12,16 @@ public class Manager : MonoBehaviour
         Cursor.SetCursor(cursorTexture, new Vector2(16, 16), CursorMode.Auto);
     }
 
+    public void NormalCursor()
+    {
+        Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
+    }
+
+    public void GameCursor()
+    {
+        Cursor.SetCursor(cursorTexture, new Vector2(16, 16), CursorMode.Auto);
+    }
+
     // Update is called once per frame
     void Update()
     {

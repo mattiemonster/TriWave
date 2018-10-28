@@ -37,6 +37,9 @@ public class GameManager : MonoBehaviour
     public GameObject waveCompleteText;
     public List<Animator> animators;
 
+    // Random references
+    public Manager manager;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -90,7 +93,8 @@ public class GameManager : MonoBehaviour
                 Reset();
                 darkeningBG.SetActive(true);
                 nextWaveUI.SetActive(true);
-                waveCompleteText.GetComponent<Animator>().Play("Entry");
+                foreach (Animator anim in animators)
+                    anim.Play("Entry");
             }
             killProgressSlider.value += killSliderIncrement;
         }
@@ -108,6 +112,7 @@ public class GameManager : MonoBehaviour
             nextWaveUI.SetActive(true);
             foreach (Animator anim in animators)
                 anim.Play("Entry");
+            manager.NormalCursor();
         }
 
         aliveEnemies.Remove(enemy);
@@ -146,6 +151,8 @@ public class GameManager : MonoBehaviour
 
         int newWaveIndex = rnd.Next(0, availableWaves.Count);
         ChangeWave(availableWaves[newWaveIndex]);
+
+        manager.GameCursor();
     }
 
     /// <summary>
